@@ -1,10 +1,10 @@
 <mat-toolbar color="primary" class="nav-toolbar">
   <div class="container">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <button class="logo-button" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon class="logo-icon">supervised_user_circle</mat-icon>
     </button>
     <span class="nav-toolbar__name">ProductsCRUD</span>
     <span class="example-spacer"></span>
-    <button class="product-button" mat-raised-button color="warn">Add product</button>
+    <button class="product-button" mat-raised-button color="warn" (click)="openDialog()">Add product</button>
   </div>
 </mat-toolbar>
