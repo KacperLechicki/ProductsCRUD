@@ -1,5 +1,8 @@
 .nav-toolbar {
-  letter-spacing: 1.2px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  letter-spacing: 0.8px;
   color: whitesmoke;
   background-color: #161616;
 
@@ -11,8 +14,32 @@
     display: flex;
     align-items: center;
 
-    &__name {
-      margin-left: 10px;
+    button {
+      letter-spacing: 0.2px;
+    }
+  }
+}
+
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+//----------------------------------------------------------------
+
+@media only screen and (max-width: 375px) {
+  .nav-toolbar {
+    font-size: 1.6rem;
+
+    mat-icon {
+      font-size: 2.2rem;
+    }
+
+    .container {
+      .product-button {
+        padding: 0 6px;
+        height: 30px;
+        font-size: 1.4rem;
+      }
     }
   }
 }
