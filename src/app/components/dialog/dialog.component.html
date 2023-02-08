@@ -1,1 +1,15 @@
-<p>dialog works!</p>
+<h1 mat-dialog-title>Add Product Form</h1>
+<div mat-dialog-content class="dialog-content">
+  <mat-form-field appearance="outline">
+    <mat-label>Product Name</mat-label>
+    <input matInput placeholder="Name">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Product Category</mat-label>
+    <mat-select placeholder="Category">
+      <mat-option value="Fruits">Fruits</mat-option>
+      <mat-option value="Vegetables">Vegetables</mat-option>
+      <mat-option value="Electronics">Electronics</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
