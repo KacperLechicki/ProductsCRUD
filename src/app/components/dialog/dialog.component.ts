@@ -15,6 +15,8 @@ export class DialogComponent {
 
   productForm!: FormGroup;
 
+  actionButton: string = 'Save';
+
   constructor(
     private formBuilder: FormBuilder,
     private apiService: APIService,
@@ -36,6 +38,7 @@ export class DialogComponent {
     });
 
     if (this.editData) {
+      this.actionButton = 'Update';
       this.productForm.controls['productName'].setValue(
         this.editData.productName
       );
@@ -48,19 +51,27 @@ export class DialogComponent {
   }
 
   addProduct(): void {
-    if (this.productForm.valid) {
-      this.addProductSubscription = this.apiService
-        .postProduct(this.productForm.value)
-        .subscribe({
-          next: () => {
-            alert('Product added succesfully!');
-            this.productForm.reset();
-            this.dialogRef.close();
-          },
-          error: () => {
-            alert('Error while adding the product...');
-          },
-        });
+    if (!this.editData) {
+      if (this.productForm.valid) {
+        this.addProductSubscription = this.apiService
+          .postProduct(this.productForm.value)
+          .subscribe({
+            next: () => {
+              alert('Product added succesfully!');
+              this.productForm.reset();
+              this.dialogRef.close();
+            },
+            error: () => {
+              alert('Error while adding the product...');
+            },
+          }); 
+      }
+    } else {
+      this.updateProduct();
     }
+  }
+
+  updateProduct(): void {
+
   }
 }

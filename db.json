@@ -80,6 +80,15 @@
       "comment": "ybyvygvy",
       "date": "2023-02-01T23:00:00.000Z",
       "id": 9
+    },
+    {
+      "productName": "Testowy100",
+      "category": "Electronics",
+      "condition": "Second Hand",
+      "price": 200,
+      "comment": "dssdsdds",
+      "date": "2023-02-09T23:00:00.000Z",
+      "id": 10
     }
   ],
   "comments": [
