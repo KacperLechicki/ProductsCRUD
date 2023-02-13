@@ -1,41 +1,43 @@
 <h1 mat-dialog-title>Add Product</h1>
 <div mat-dialog-content class="dialog-content">
-  <mat-form-field appearance="outline">
-    <mat-label>Product Name</mat-label>
-    <input matInput placeholder="Name">
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Product Category</mat-label>
-    <mat-select placeholder="Category">
-      <mat-option value="Fruits">Fruits</mat-option>
-      <mat-option value="Vegetables">Vegetables</mat-option>
-      <mat-option value="Electronics">Electronics</mat-option>
-      <mat-option value="Clothes">Clothes</mat-option>
-      <mat-option value="Other">Other</mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Choose a date</mat-label>
-    <input matInput [matDatepicker]="picker">
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  <label for="">Product Condition</label>
-  <mat-radio-group class="radio-group">
-    <mat-radio-button *ngFor="let condition of conditionList" [value]="condition">
-      {{condition}}
-    </mat-radio-button>
-  </mat-radio-group>
-  <mat-form-field appearance="outline">
-    <mat-label>Price</mat-label>
-    <input type="number" matInput placeholder="Price">
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Comment</mat-label>
-    <textarea class="commentArea" matInput placeholder="Comment"></textarea>
-  </mat-form-field>
+  <form [formGroup]="productForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Product Name</mat-label>
+      <input formControlName="productName" matInput placeholder="Name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Product Category</mat-label>
+      <mat-select formControlName="category" placeholder="Category">
+        <mat-option value="Fruits">Fruits</mat-option>
+        <mat-option value="Vegetables">Vegetables</mat-option>
+        <mat-option value="Electronics">Electronics</mat-option>
+        <mat-option value="Clothes">Clothes</mat-option>
+        <mat-option value="Other">Other</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Choose a date</mat-label>
+      <input formControlName="date" matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <label for="">Product Condition</label>
+    <mat-radio-group formControlName="condition" class="radio-group">
+      <mat-radio-button *ngFor="let condition of conditionList" [value]="condition">
+        {{condition}}
+      </mat-radio-button>
+    </mat-radio-group>
+    <mat-form-field appearance="outline">
+      <mat-label>Price</mat-label>
+      <input formControlName="price" type="number" matInput placeholder="Price">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Comment</mat-label>
+      <textarea formControlName="comment" class="commentArea" matInput placeholder="Comment"></textarea>
+    </mat-form-field>
+  </form>
 </div>
 <div mat-dialog-action [align]="'end'" class="actionButtons">
   <button mat-raised-button color="warn" mat-dialog-close>Close</button>
-  <button mat-raised-button color="primary">Save</button>
+  <button mat-raised-button color="primary" (click)="addProduct()">Save</button>
 </div>
