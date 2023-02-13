@@ -22,8 +22,16 @@
   </mat-form-field>
   <label for="">Product Condition</label>
   <mat-radio-group class="radio-group">
-    <mat-radio-button *ngFor="let condition of conditionList">
+    <mat-radio-button *ngFor="let condition of conditionList" [value]="condition">
       {{condition}}
     </mat-radio-button>
   </mat-radio-group>
+  <mat-form-field appearance="outline">
+    <mat-label>Price</mat-label>
+    <input type="number" matInput placeholder="Price">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Comment</mat-label>
+    <textarea class="commentArea" matInput placeholder="Comment"></textarea>
+  </mat-form-field>
 </div>

@@ -1,9 +1,14 @@
 mat-form-field {
   padding: 4px 0;
   width: 100%;
+
+  .commentArea {
+    max-height: 200px;
+  }
 }
 
 .radio-group {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
 }
