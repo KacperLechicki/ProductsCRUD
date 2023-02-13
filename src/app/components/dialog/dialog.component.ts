@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { APIService } from 'src/app/services/api.service';
 import { MatDialogRef } from '@angular/material/dialog';
-import { Dialog } from '@angular/cdk/dialog';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dialog',
@@ -11,6 +11,7 @@ import { Dialog } from '@angular/cdk/dialog';
 })
 export class DialogComponent {
   conditionList: string[] = ['New', 'Second Hand', 'Refurbished'];
+  addProductSubscription!: Subscription;
 
   productForm!: FormGroup;
 
@@ -35,16 +36,24 @@ export class DialogComponent {
 
   addProduct(): void {
     if (this.productForm.valid) {
-      this.apiService.postProduct(this.productForm.value).subscribe({
-        next: (response) => {
-          alert('Product added succesfully!');
-          this.productForm.reset();
-          this.dialogRef.close();
-        },
-        error: () => {
-          alert('Error while adding the product...');
-        },
-      });
+      this.addProductSubscription = this.apiService
+        .postProduct(this.productForm.value)
+        .subscribe({
+          next: () => {
+            alert('Product added succesfully!');
+            this.productForm.reset();
+            this.dialogRef.close();
+          },
+          error: () => {
+            alert('Error while adding the product...');
+          },
+        });
     }
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.addProductSubscription.unsubscribe();
   }
 }
