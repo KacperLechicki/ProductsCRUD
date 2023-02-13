@@ -23,18 +23,18 @@ body {
   background-color: #272727;
 }
 
-.dialog-panel .mat-mdc-dialog-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(300px, 450px, 600px);
-  height: auto;
-}
+// .dialog-panel .mat-mdc-dialog-container {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   width: clamp(400px, 500px, 600px);
+//   height: auto;
+// }
 
-.dialog-panel .mat-mdc-dialog-surface {
-  overflow: hidden;
-}
+// .dialog-panel .mat-mdc-dialog-surface {
+//   overflow: hidden;
+// }
 
 //--------------------------------------------------
 //--------------------------------------------------

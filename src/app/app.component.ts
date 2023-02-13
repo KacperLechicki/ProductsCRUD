@@ -9,7 +9,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,6 +25,7 @@ export class AppComponent {
     'comment',
     'date',
     'condition',
+    'action',
   ];
   dataSource!: MatTableDataSource<any>;
 
@@ -37,7 +37,6 @@ export class AppComponent {
   openDialog() {
     this.dialog.open(DialogComponent, {
       panelClass: 'dialog-panel',
-      width: '80%',
       disableClose: true,
     });
   }
@@ -62,6 +61,13 @@ export class AppComponent {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  editProduct(row: any): void {
+    this.dialog.open(DialogComponent, {
+      disableClose: true,
+      data: row,
+    });
   }
 
   ngOnInit(): void {
