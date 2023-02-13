@@ -20,4 +20,10 @@
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
+  <label for="">Product Condition</label>
+  <mat-radio-group class="radio-group">
+    <mat-radio-button *ngFor="let condition of conditionList">
+      {{condition}}
+    </mat-radio-button>
+  </mat-radio-group>
 </div>
