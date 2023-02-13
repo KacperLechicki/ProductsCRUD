@@ -88,12 +88,12 @@ export class AppComponent {
     this.apiService.deleteProduct(id).subscribe({
       next: (res) => {
         alert('Product deleted successfully');
+        this.getAllProducts();
       },
       error: () => {
         alert('Error while deleting product...');
       },
     });
-    this.getAllProducts();
   }
 
   ngOnInit(): void {

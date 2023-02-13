@@ -1,76 +1,22 @@
 {
   "productList": [
     {
-      "productName": "Testowy",
-      "category": "Vegetables",
-      "condition": "Second Hand",
-      "price": 24,
-      "comment": "asdad",
-      "date": "2023-02-14T23:00:00.000Z",
+      "productName": "Apple",
+      "category": "Fruits",
+      "condition": "New",
+      "price": 0.5,
+      "comment": "Tasty apple",
+      "date": "2023-02-12T23:00:00.000Z",
       "id": 1
     },
     {
-      "productName": "Testowy2",
-      "category": "Vegetables",
+      "productName": "iPhone",
+      "category": "Electronics",
       "condition": "Second Hand",
-      "price": 24,
-      "comment": "asdadsad",
-      "date": "2023-02-14T23:00:00.000Z",
+      "price": 400,
+      "comment": "IPhone with some cracks on the screen",
+      "date": "2023-02-12T23:00:00.000Z",
       "id": 2
-    },
-    {
-      "productName": "asd",
-      "category": "Fruits",
-      "condition": "New",
-      "price": 123,
-      "comment": "ads",
-      "date": "2023-02-08T23:00:00.000Z",
-      "id": 3
-    },
-    {
-      "productName": "Testowy 3",
-      "category": "Clothes",
-      "condition": "New",
-      "price": 231,
-      "comment": "sadasdsa",
-      "date": "2023-02-15T23:00:00.000Z",
-      "id": 4
-    },
-    {
-      "productName": "Testowy 4",
-      "category": "Vegetables",
-      "condition": "New",
-      "price": 1234,
-      "comment": "sadasd",
-      "date": "2023-02-15T23:00:00.000Z",
-      "id": 5
-    },
-    {
-      "productName": "Testowy 5",
-      "category": "Clothes",
-      "condition": "New",
-      "price": 45,
-      "comment": "asd",
-      "date": "2023-02-09T23:00:00.000Z",
-      "id": 6
-    },
-    {
-      "productName": "Testowy 6",
-      "category": "Electronics",
-      "condition": "Second Hand",
-      "price": 34,
-      "comment": "asd",
-      "date": "2023-02-01T23:00:00.000Z",
-      "id": 7
-    },
-    {
-      "productName": "TableTest",
-      "category": "Electronics",
-      "condition": "New",
-      "price": 30,
-      "comment": "asdasdad",
-      "date": "2023-02-08T23:00:00.000Z",
-      "id": 8
     }
   ],
   "comments": [
