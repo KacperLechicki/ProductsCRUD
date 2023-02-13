@@ -35,10 +35,17 @@ export class AppComponent {
   constructor(public dialog: MatDialog, private apiService: APIService) {}
 
   openDialog() {
-    this.dialog.open(DialogComponent, {
-      panelClass: 'dialog-panel',
-      disableClose: true,
-    });
+    this.dialog
+      .open(DialogComponent, {
+        panelClass: 'dialog-panel',
+        disableClose: true,
+      })
+      .afterClosed()
+      .subscribe((value) => {
+        if (value === 'save') {
+          this.getAllProducts();
+        }
+      });
   }
 
   getAllProducts() {
@@ -64,10 +71,29 @@ export class AppComponent {
   }
 
   editProduct(row: any): void {
-    this.dialog.open(DialogComponent, {
-      disableClose: true,
-      data: row,
+    this.dialog
+      .open(DialogComponent, {
+        disableClose: true,
+        data: row,
+      })
+      .afterClosed()
+      .subscribe((value) => {
+        if (value === 'update') {
+          this.getAllProducts();
+        }
+      });
+  }
+
+  deleteProduct(id: number): void {
+    this.apiService.deleteProduct(id).subscribe({
+      next: (res) => {
+        alert('Product deleted successfully');
+      },
+      error: () => {
+        alert('Error while deleting product...');
+      },
     });
+    this.getAllProducts();
   }
 
   ngOnInit(): void {

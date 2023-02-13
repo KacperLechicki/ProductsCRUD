@@ -59,12 +59,12 @@ export class DialogComponent {
             next: () => {
               alert('Product added succesfully!');
               this.productForm.reset();
-              this.dialogRef.close();
+              this.dialogRef.close('save');
             },
             error: () => {
               alert('Error while adding the product...');
             },
-          }); 
+          });
       }
     } else {
       this.updateProduct();
@@ -72,6 +72,19 @@ export class DialogComponent {
   }
 
   updateProduct(): void {
-
+    if (this.productForm.valid) {
+      this.apiService
+        .putProduct(this.productForm.value, this.editData.id)
+        .subscribe({
+          next: (res) => {
+            alert('Product updated successfully');
+            this.productForm.reset();
+            this.dialogRef.close('update');
+          },
+          error: () => {
+            alert('Error while updating...');
+          }
+        });
+    }
   }
 }
