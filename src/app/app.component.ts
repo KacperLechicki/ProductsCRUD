@@ -16,6 +16,7 @@ export class AppComponent {
     this.dialog.open(DialogComponent, {
       panelClass: 'dialog-panel',
       width: '80%',
+      disableClose: true,
     });
   }
 }

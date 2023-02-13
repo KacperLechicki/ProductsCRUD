@@ -3,6 +3,7 @@ mat-form-field {
   width: 100%;
 
   .commentArea {
+    min-height: 100px;
     max-height: 200px;
   }
 }
@@ -11,4 +12,28 @@ mat-form-field {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+}
+
+.actionButtons {
+  margin: 10px;
+
+  button {
+    margin-right: 10px;
+  }
+}
+
+//-------------------------------------
+//-------------------------------------
+//-------------------------------------
+//-------------------------------------
+//-------------------------------------
+
+@media only screen and (max-width: 375px) {
+  .actionButtons {
+    button {
+      padding: 0 6px;
+      height: 30px;
+      font-size: 1.4rem;
+    }
+  }
 }
