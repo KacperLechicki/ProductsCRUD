@@ -12,6 +12,11 @@ mat-form-field {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+
+  &.ng-invalid.ng-touched {
+    border: 1px solid red;
+    border-radius: 5px;
+  }
 }
 
 .actionButtons {

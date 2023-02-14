@@ -65,6 +65,20 @@ export class DialogComponent {
               alert('Error while adding the product...');
             },
           });
+      } else {
+        if (this.productForm.controls['productName'].value === '') {
+          this.productForm.controls['productName'].markAsTouched();
+        } else if (this.productForm.controls['category'].value == '') {
+          this.productForm.controls['category'].markAsTouched();
+        } else if (this.productForm.controls['date'].value == '') {
+          this.productForm.controls['date'].markAsTouched();
+        } else if (this.productForm.controls['condition'].value == '') {
+          this.productForm.controls['condition'].markAsTouched();
+        } else if (this.productForm.controls['price'].value == '') {
+          this.productForm.controls['price'].markAsTouched();
+        } else if (this.productForm.controls['comment'].value == '') {
+          this.productForm.controls['comment'].markAsTouched();
+        }
       }
     } else {
       this.updateProduct();
@@ -83,7 +97,7 @@ export class DialogComponent {
           },
           error: () => {
             alert('Error while updating...');
-          }
+          },
         });
     }
   }
