@@ -1,27 +1,13 @@
-# CRUD
+## Angular application made to practice using angular and angular material
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.4.
+![Zrzut ekranu 2023-02-22 o 22 58 43](https://user-images.githubusercontent.com/118530164/220769413-e06baaa4-ed55-4088-89b7-d869b0586d50.png)
 
-## Development server
+This app allows you to add, edit and delete products stored in a json database. The products are shown in the material table.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![Zrzut ekranu 2023-02-22 o 22 59 02](https://user-images.githubusercontent.com/118530164/220769685-6f5be56c-d82a-4ff7-8857-743c4b772585.png)
 
-## Code scaffolding
+Adding is done via a dialog box that has a reactive form with basic validation.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![Zrzut ekranu 2023-02-22 o 22 59 21](https://user-images.githubusercontent.com/118530164/220769792-8a5fa35f-31a9-4f7c-aae3-b32a7b4dc840.png)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+All http operations are done using service with implemented methods for each of them, which we can subscribe to in the component.
